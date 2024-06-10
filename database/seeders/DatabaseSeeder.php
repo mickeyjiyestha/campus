@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\student;
+use App\Models\ClassRoom;
+use App\Models\Teacher;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +16,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        student::factory(40)->create();
+        Teacher::factory(20)->create();
+        
+    ClassRoom::create([
+        'Jurusan' => 'Teknologi Informasi',
+        'Program_Studi' => 'Manajemen Informatika',
+        'Kelas' => 'A'
+    ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+    ClassRoom::create([
+        'Jurusan' => 'Teknologi Informasi',
+        'Program_Studi' => 'Manajemen Informatika',
+        'Kelas' => 'B'
+    ]);
+
+    ClassRoom::create([
+        'Jurusan' => 'Teknologi Informasi',
+        'Program_Studi' => 'Manajemen Informatika',
+        'Kelas' => 'C'
+    ]);
+
+    ClassRoom::create([
+        'Jurusan' => 'Teknologi Informasi',
+        'Program_Studi' => 'Manajemen Informatika',
+        'Kelas' => 'D'
+    ]);
     }
 }
